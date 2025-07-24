@@ -1,0 +1,184 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 21px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+  gap: 0.5em;
+  padding: 0.5em;
+}
+
+.sidebar {
+  grid-row: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  background-color: #f8f9fa;
+}
+
+.title-sect {
+  padding: 1em;
+  border-bottom: 1px solid #ccc;
+}
+
+.title {
+  margin: 0;
+  color: #333;
+}
+
+.menu-list {
+  flex: 1;
+}
+
+.menu {
+  padding: 0.75em 1em;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid #eee;
+}
+
+.menu:hover {
+  background-color: #e9ecef;
+}
+
+.task-bar {
+  grid-column: 2;
+  grid-row: 1;
+  border-bottom: 1px solid #ccc;
+  padding: 1em;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  min-height: 60px;
+  font-weight: bold;
+  color: #333;
+}
+
+.task-container {
+  grid-column: 2;
+  grid-row: 2;
+  padding: 1em;
+  background-color: #fff;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.task-submit {
+  grid-column: 2;
+  grid-row: 3;
+  /* border: 1px solid #ccc; */
+  padding: 1em;
+  background-color: #f8f9fa;
+  display: flex;
+  align-items: center;
+  min-height: 80px;
+}
+
+.submit-btn {
+  padding: 0.5em 1em;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 250px 1fr;
+    gap: 0.25em;
+    padding: 0.25em;
+  }
+
+  :root {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    grid-template-columns: 200px 1fr;
+  }
+
+  :root {
+    font-size: 16px;
+  }
+
+  .menu {
+    padding: 0.5em 0.75em;
+  }
+
+  .title-sect {
+    padding: 0.75em;
+  }
+}
+
+.dialog-form {
+  width: 30%;
+}
+
+.header-form {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.task-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5em;
+  border: 1px solid;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+}
+
+.task-title {
+  flex: 2;
+}
+
+.task-card p {
+  flex: 1;
+  /* border: 1px solid; */
+}
